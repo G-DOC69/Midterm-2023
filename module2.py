@@ -38,3 +38,8 @@ while True:
             print("Here's your merge-sorted array",x)
         else:
             print("there is no such function in our program yet")
+    hh=input('Do you want the program to start over ? (Y/N) ')
+    if hh.lower()=="no" or hh.lower()=="n":
+        break
+    else:
+        continue
