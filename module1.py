@@ -1,8 +1,11 @@
 def SSF(array):
-    for i in range(0,len(array)):
-        for j in range (i+1,len(array)):
-            if array[j]<=array[i]:
-                array[i],array[j]=array[j],array[i]
+    for i in range (1,len(array)):
+        m=i
+        j=i-1
+        while array[m] <= array[j] and m>0:
+            array[j],array[m]=array[m],array[j]
+            j-=1
+            m-=1
 def ISF(array):
     for i in range(1,len(array)):
         current_value=array[i]
