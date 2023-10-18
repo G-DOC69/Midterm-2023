@@ -22,14 +22,20 @@ def MSF(array):
             array[order]=right[j]
             j+=1
             order+=1
+def subsetUtil ( A , subset = [] , index = 0 ):
+    print(*subset)
+    for i in range (index, len(A)):
+        subset.append(A[i])
+        subsetUtil(A,subset,i+1)
+        subset.pop(-1)
 while True:
-    jh=input('Do you want any array to be sorted ? (Y/N) ')
-    if jh.lower()=="yes" or jh.lower()=="y":
+    h1=input('Do you want any array to be sorted ? (Y/N) ')
+    if h1.lower()=="yes" or h1.lower()=="y":
         x=[]
         print("Current array is empty : ",x)
         a=int(input('How many elements do you want in your array ? '))
         for m in range(0,a):
-            element=float(input('enter element : '))
+            element=float(input('Enter element : '))
             x.append(element)
         print("This is your current array : ",x)
         s=input('Which way do you want it to be sorted ? (merge, quick available) ')
@@ -38,8 +44,19 @@ while True:
             print("Here's your merge-sorted array",x)
         else:
             print("there is no such function in our program yet")
-    hh=input('Do you want the program to start over ? (Y/N) ')
-    if hh.lower()=="no" or hh.lower()=="n":
+    h2=input('Do you want to find all possible subsets in a set ? (Y/N) ')
+    if h2.lower()=="yes" or h2.lower()=="y":
+        A=[]
+        print("Current set is empty ",A)
+        a=int(input("How many elements do you want in your set ? "))
+        for m in range (0,a):
+            element=float(input('Enter element : '))
+            A.append(element)
+        print("This is your current set : ",A)
+        print("Here are all possible subsets of your set : ")
+        subsetUtil(A)
+    h0=input('Do you want the program to start over ? (Y/N) ')
+    if h0.lower()=="no" or h0.lower()=="n":
         break
     else:
         continue
